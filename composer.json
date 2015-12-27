@@ -1,0 +1,26 @@
+{
+  "name": "wake/subrequest-trait-adapter",
+  "description": "Provide subrequest trait for Silex.",
+  "version": "v0.1.0",
+  "type": "library",
+  "keywords": ["silex"],
+  "homepage": "https://github.com/wake/SubRequest-Trait-Adapter",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wake Liu",
+      "email": "wake.gs@gmail.com",
+      "homepage": "http://wake.gs"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/wake/SubRequest-Trait-Adapter/issues",
+    "source": "https://github.com/wake/SubRequest-Trait-Adapter"
+  },
+  "require": {
+    "silex/silex": "1.*"
+  },
+  "autoload": {
+    "files": ["src/SubRequestTraitAdapter.php"]
+  }
+}
