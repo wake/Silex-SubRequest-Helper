@@ -84,7 +84,7 @@
        *
        */
       $app['helper.request.clone.master'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
-        return $this->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::MASTER_REQUEST, false);
+        return $app->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::MASTER_REQUEST, false);
       });
 
 
@@ -93,7 +93,7 @@
        *
        */
       $app['helper.request.clone.sub'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
-        return $this->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::SUB_REQUEST, false);
+        return $app->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::SUB_REQUEST, false);
       });
 
     }
