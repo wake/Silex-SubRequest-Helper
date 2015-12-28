@@ -18,7 +18,7 @@
      *
      * @param  Application $app
      */
-    public function register () {
+    public function register (Application $app) {
 
 
       /**
@@ -83,7 +83,7 @@
        */
       $app['helper.request.clone.master'] = $app->protected (function ($url, $options = [], $params = []) use ($app) {
         return $this->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::MASTER_REQUEST, false);
-      }
+      });
 
 
       /**
@@ -92,7 +92,7 @@
        */
       $app['helper.request.clone.sub'] = $app->protected (function ($url, $options = [], $params = []) use ($app) {
         return $this->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::SUB_REQUEST, false);
-      }
+      });
 
     }
 
