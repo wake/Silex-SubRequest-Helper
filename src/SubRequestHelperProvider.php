@@ -6,6 +6,7 @@
   use Silex\ServiceProviderInterface;
   use Symfony\Component\HttpFoundation\Request;
   use Symfony\Component\HttpFoundation\Response;
+  use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 
   /**
@@ -27,7 +28,7 @@
        *
        *
        */
-      $app['helper.request.clone'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
+      $app['helper.request.clone'] = $app->protect (function ($url, $options = [], $params = []) use ($app) {
 
         $options += [
           'request' => '',
@@ -45,7 +46,7 @@
           ];
 
         if ($options['request'] == '')
-          $options['request'] = $this['request'];
+          $options['request'] = $app['request'];
 
         $request = $options['request'];
 
@@ -83,7 +84,7 @@
        *
        *
        */
-      $app['helper.request.clone.master'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
+      $app['helper.request.clone.master'] = $app->protect (function ($url, $options = [], $params = []) use ($app) {
         return $app->handle ($app['helper.request.clone'] ($url, $options, $params), HttpKernelInterface::MASTER_REQUEST, false);
       });
 
@@ -92,7 +93,7 @@
        *
        *
        */
-      $app['helper.request.clone.sub'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
+      $app['helper.request.clone.sub'] = $app->protect (function ($url, $options = [], $params = []) use ($app) {
         return $app->handle ($app['helper.request.clone'] ($url, $options, $params), HttpKernelInterface::SUB_REQUEST, false);
       });
 
