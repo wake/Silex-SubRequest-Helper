@@ -27,7 +27,7 @@
        *
        *
        */
-      $app['helper.request.clone'] = $app->protected (function ($url, $options = [], $params = []) use ($app) {
+      $app['helper.request.clone'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
 
         $options += [
           'request' => '',
@@ -83,7 +83,7 @@
        *
        *
        */
-      $app['helper.request.clone.master'] = $app->protected (function ($url, $options = [], $params = []) use ($app) {
+      $app['helper.request.clone.master'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
         return $this->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::MASTER_REQUEST, false);
       });
 
@@ -92,7 +92,7 @@
        *
        *
        */
-      $app['helper.request.clone.sub'] = $app->protected (function ($url, $options = [], $params = []) use ($app) {
+      $app['helper.request.clone.sub'] = $app->share (function ($url, $options = [], $params = []) use ($app) {
         return $this->handle ($app['helper.request'] ($url, $options, $params), HttpKernelInterface::SUB_REQUEST, false);
       });
 
