@@ -19,7 +19,7 @@
      *
      */
     public function handoff ($url, $options = [], $params = []) {
-      return $app['helper.request.clone.master'] ($url, $options, $params);
+      return $this['helper.request.clone.master'] ($url, $options, $params);
     }
 
 
@@ -28,6 +28,6 @@
      *
      */
     public function fireoff ($url, $options = [], $params = []) {
-      return $app['helper.request.clone.sub'] ($url, $options, $params);
+      return $this['helper.request.clone.sub'] ($url, $options, $params);
     }
   }
