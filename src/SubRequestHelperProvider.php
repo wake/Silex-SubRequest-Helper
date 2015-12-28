@@ -2,6 +2,7 @@
 
   namespace Silex\Provider;
 
+  use Silex\Application;
   use Silex\ServiceProviderInterface;
   use Symfony\Component\HttpFoundation\Request;
   use Symfony\Component\HttpFoundation\Response;
