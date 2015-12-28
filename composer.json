@@ -1,10 +1,10 @@
 {
-  "name": "wake/subrequest-trait-adapter",
-  "description": "Provide subrequest trait for Silex.",
-  "version": "v0.1.0",
+  "name": "wake/silex-subrequest-helper",
+  "description": "Provide subrequest helper functions and traits for Silex.",
+  "version": "v0.2.0",
   "type": "library",
   "keywords": ["silex"],
-  "homepage": "https://github.com/wake/SubRequest-Trait-Adapter",
+  "homepage": "https://github.com/wake/Silex-SubRequest-Helper",
   "license": "MIT",
   "authors": [
     {
@@ -14,13 +14,16 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/wake/SubRequest-Trait-Adapter/issues",
-    "source": "https://github.com/wake/SubRequest-Trait-Adapter"
+    "issues": "https://github.com/wake/Silex-SubRequest-Helper/issues",
+    "source": "https://github.com/wake/Silex-SubRequest-Helper"
   },
   "require": {
     "silex/silex": "1.*"
   },
   "autoload": {
-    "files": ["src/SubRequestTraitAdapter.php"]
+    "files": [
+      "src/SubRequestHelperProvider.php",
+      "src/SubRequestHelperTrait.php"
+    ]
   }
 }

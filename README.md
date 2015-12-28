@@ -1,3 +1,3 @@
-# SubRequest-Trait-Service
+# Silex-SubRequest-Helper
 
-Sub request trait for Silex
+Provide subrequest helper functions and traits for Silex.
