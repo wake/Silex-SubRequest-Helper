@@ -2,8 +2,10 @@
 
   namespace Silex\Provider;
 
+  use Pimple\Container;
+  use Pimple\ServiceProviderInterface;
   use Silex\Application;
-  use Silex\ServiceProviderInterface;
+  use Silex\Api\BootableProviderInterface;
   use Symfony\Component\HttpFoundation\Request;
   use Symfony\Component\HttpFoundation\Response;
   use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -14,14 +16,14 @@
    *
    * @author Wake Liu <wake.gs@gmail.com>
    */
-  class SubRequestHelperProvider implements ServiceProviderInterface {
+  class SubRequestHelperProvider implements ServiceProviderInterface, BootableProviderInterface {
 
 
     /**
      *
      * @param  Application $app
      */
-    public function register (Application $app) {
+    public function register (Container $app) {
 
 
       /**

@@ -1,7 +1,6 @@
 {
   "name": "wake/silex-subrequest-helper",
   "description": "Provide subrequest helper functions and traits for Silex.",
-  "version": "v0.2.0",
   "type": "library",
   "keywords": ["silex"],
   "homepage": "https://github.com/wake/Silex-SubRequest-Helper",
@@ -18,7 +17,8 @@
     "source": "https://github.com/wake/Silex-SubRequest-Helper"
   },
   "require": {
-    "silex/silex": "1.*"
+    "silex/silex": "2.*",
+    "pimple/pimple": "3.*"
   },
   "autoload": {
     "files": [
